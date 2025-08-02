@@ -1,0 +1,874 @@
+<html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青海景盛鲜仓商贸有限公司</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    
+    <!-- Tailwind 配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36BFFA',
+                        accent: '#FF7D00',
+                        dark: '#1D2939',
+                        light: '#F9FAFB'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .transition-custom {
+                transition: all 0.3s ease;
+            }
+            .hover-lift {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .hover-lift:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-light text-dark antialiased">
+    <!-- 导航栏 -->
+    <header id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white mr-3">
+                            <i class="fa fa-cube text-xl"></i>
+                        </div>
+                        <span class="text-xl font-bold text-dark">青海景盛鲜仓商贸</span>
+                    </a>
+                </div>
+                
+                <!-- 桌面导航 -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-dark hover:text-primary font-medium transition-custom">首页</a>
+                    <a href="#about" class="text-dark hover:text-primary font-medium transition-custom">关于我们</a>
+                    <a href="#services" class="text-dark hover:text-primary font-medium transition-custom">服务项目</a>
+                    <a href="#contact" class="text-dark hover:text-primary font-medium transition-custom">联系我们</a>
+                </nav>
+                
+                <!-- 联系按钮 -->
+                <div class="hidden md:block">
+                    <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg font-medium transition-custom">
+                        立即咨询
+                    </a>
+                </div>
+                
+                <!-- 移动端菜单按钮 -->
+                <button id="menu-toggle" class="md:hidden text-dark hover:text-primary focus:outline-none">
+                    <i class="fa fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-3 space-y-3">
+                <a href="#home" class="block text-dark hover:text-primary font-medium py-2 transition-custom">首页</a>
+                <a href="#about" class="block text-dark hover:text-primary font-medium py-2 transition-custom">关于我们</a>
+                <a href="#services" class="block text-dark hover:text-primary font-medium py-2 transition-custom">服务项目</a>
+                <a href="#contact" class="block text-dark hover:text-primary font-medium py-2 transition-custom">联系我们</a>
+                <a href="#contact" class="block bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg font-medium text-center transition-custom">
+                    立即咨询
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 英雄区域 -->
+        <section id="home" class="pt-24 md:pt-0 min-h-screen flex items-center relative overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-gradient-to-r from-dark/80 to-dark/40 z-10"></div>
+                <img src="https://picsum.photos/id/1043/1920/1080" alt="青海景盛鲜仓商贸有限公司仓库与物流" class="w-full h-full object-cover">
+            </div>
+            
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 py-16 md:py-24">
+                <div class="max-w-2xl">
+                    <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-white leading-tight text-shadow mb-6">
+                        坚持初心<br>铸就品质服务
+                    </h1>
+                    <p class="text-[clamp(1rem,2vw,1.25rem)] text-white/90 mb-8 max-w-xl">
+                        青海景盛鲜仓始终坚守创业初心，以诚信为本，用专业服务连接青海与全国各地的优质资源，为客户创造持久价值。
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#services" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-medium text-center transition-custom">
+                            我们的服务
+                        </a>
+                        <a href="#about" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/30 px-8 py-3 rounded-lg font-medium text-center transition-custom">
+                            了解我们的初心
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+                <a href="#about" class="text-white/80 hover:text-white">
+                    <i class="fa fa-chevron-down text-2xl"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- 关于我们 -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-dark mb-4">坚守初心，砥砺前行</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto">青海景盛鲜仓商贸有限公司始终铭记创业初心，专注于提供优质商贸服务，连接青海与全国各地的优质资源。</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="relative">
+                        <img src="https://picsum.photos/id/1059/600/800" alt="青海景盛鲜仓商贸有限公司办公环境" class="rounded-lg shadow-lg w-full h-auto">
+                        <div class="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-lg shadow-lg hidden md:block">
+                            <p class="text-3xl font-bold">
+                                初心不改
+                            </p>
+                            <p class="text-sm">
+                                2025年创立至今
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4">我们的初心与使命</h3>
+                        <p class="text-gray-600 mb-4">青海景盛鲜仓商贸有限公司成立于2025年，自创立之初，我们便坚守"让优质资源流动起来"的初心，致力于成为青海与全国商贸流通的坚实桥梁。</p>
+                        <p class="text-gray-600 mb-6">
+                            多年来，市场环境不断变化，但我们"诚信为本、质量第一、客户至上"的经营理念从未改变。这份初心指引着我们不断提升服务质量，赢得了广大客户的信赖和好评。
+                        </p>
+                        
+                        <div class="bg-primary/5 p-6 rounded-lg mb-8 border-l-4 border-primary">
+                            <p class="italic text-gray-700">
+                                "商业的本质是价值交换，而长久的商业关系建立在诚信与品质之上。我们始终铭记创业时的初心，以专业服务创造真实价值。"
+                            </p>
+                            <p class="mt-3 text-right font-medium">— 公司创始人</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-6 mb-8">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3 flex-shrink-0">
+                                    <i class="fa fa-check"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">坚守品质</h4>
+                                    <p class="text-gray-600 text-sm">不妥协的质量标准</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3 flex-shrink-0">
+                                    <i class="fa fa-heart"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">客户至上</h4>
+                                    <p class="text-gray-600 text-sm">始终将客户放在首位</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3 flex-shrink-0">
+                                    <i class="fa fa-balance-scale"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">诚信经营</h4>
+                                    <p class="text-gray-600 text-sm">坚守商业道德底线</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3 flex-shrink-0">
+                                    <i class="fa fa-line-chart"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">共同成长</h4>
+                                    <p class="text-gray-600 text-sm">与客户共筑未来</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-custom">
+                            了解更多我们的故事 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 公司数据 -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
+                    <div class="bg-gray-50 p-6 rounded-lg text-center hover-lift">
+                        <div class="text-4xl font-bold text-primary mb-2">5000+</div>
+                        <p class="text-gray-600">信赖伙伴</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg text-center hover-lift">
+                        <div class="text-4xl font-bold text-primary mb-2">10000+</div>
+                        <p class="text-gray-600">服务案例</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg text-center hover-lift">
+                        <div class="text-4xl font-bold text-primary mb-2">50000㎡</div>
+                        <p class="text-gray-600">标准仓储</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg text-center hover-lift">
+                        <div class="text-4xl font-bold text-primary mb-2">98%</div>
+                        <p class="text-gray-600">客户满意度</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 服务项目 -->
+        <section id="services" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-dark mb-4">初心筑就的服务</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto">每一项服务都承载着我们的初心，从产品采购到仓储物流，为客户提供一站式解决方案。</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 服务1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover-lift">
+                        <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+                            <i class="fa fa-shopping-bag text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">产品采购</h3>
+                        <p class="text-gray-600 mb-4">
+                            坚守"品质第一"的初心，我们的专业采购团队为客户精选各类优质产品，确保品质与价格优势。
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center text-gray-600">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                源头直采，品质溯源
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                严格品控，杜绝劣质
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                按需定制，精准匹配
+                            </li>
+                        </ul>
+                        <a href="#contact" class="text-primary font-medium hover:text-primary/80 transition-custom">
+                            了解详情 <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- 服务2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover-lift">
+                        <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+                            <i class="fa fa-warehouse text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">仓储管理</h3>
+                        <p class="text-gray-600 mb-4">
+                            秉持"责任至上"的初心，我们以现代化仓储设施和专业管理，确保每一件货物安全完好。
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center text-gray-600">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                50000㎡标准化仓库
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                智能监控，安全保障
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                精细化管理，精准高效
+                            </li>
+                        </ul>
+                        <a href="#contact" class="text-primary font-medium hover:text-primary/80 transition-custom">
+                            了解详情 <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- 服务3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover-lift">
+                        <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+                            <i class="fa fa-truck text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">物流配送</h3>
+                        <p class="text-gray-600 mb-4">
+                            坚守"准时守信"的初心，我们建立完善物流网络，提供快捷、安全的配送服务，覆盖全国。
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center text-gray-600">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                专业团队，准时送达
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                全程跟踪，透明可控
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                灵活调整，满足需求
+                            </li>
+                        </ul>
+                        <a href="#contact" class="text-primary font-medium hover:text-primary/80 transition-custom">
+                            了解详情 <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- 服务4 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover-lift">
+                        <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+                            <i class="fa fa-line-chart text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">市场分析</h3>
+                        <p class="text-gray-600 mb-4">
+                            秉持"专业负责"的初心，我们提供深度市场分析，帮助客户把握趋势，制定合理策略。
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center text-gray-600">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                行业趋势深度解析
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                价格波动科学预测
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                竞争格局全面分析
+                            </li>
+                        </ul>
+                        <a href="#contact" class="text-primary font-medium hover:text-primary/80 transition-custom">
+                            了解详情 <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- 服务5 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover-lift">
+                        <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+                            <i class="fa fa-handshake-o text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">供应链管理</h3>
+                        <p class="text-gray-600 mb-4">
+                            坚守"共创价值"的初心，我们优化供应链全流程，帮助客户降低成本，提升效率。
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center text-gray-600">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                全链条优化方案
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                优质供应商筛选
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                精细化成本控制
+                            </li>
+                        </ul>
+                        <a href="#contact" class="text-primary font-medium hover:text-primary/80 transition-custom">
+                            了解详情 <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- 服务6 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover-lift">
+                        <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+                            <i class="fa fa-customer-service text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">客户服务</h3>
+                        <p class="text-gray-600 mb-4">
+                            秉持"客户至上"的初心，我们的专业团队提供全方位服务，及时解决客户的每一个问题。
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center text-gray-600">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                7×24小时在线响应
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                快速问题解决机制
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                个性化需求满足
+                            </li>
+                        </ul>
+                        <a href="#contact" class="text-primary font-medium hover:text-primary/80 transition-custom">
+                            了解详情 <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 客户评价 -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-dark mb-4">初心赢得的信赖</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto">客户的认可，是对我们坚守初心最好的证明。听听他们怎么说。</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 评价1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover-lift">
+                        <div class="flex items-center mb-4">
+                            <img src="https://picsum.photos/id/1005/100/100" alt="客户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h4 class="font-semibold">张先生</h4>
+                                <p class="text-gray-500 text-sm">某零售企业采购经理</p>
+                            </div>
+                        </div>
+                        <div class="text-yellow-400 mb-4">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 italic">
+                            "与青海景盛鲜仓合作多年，最欣赏他们始终如一的服务品质。无论市场如何变化，他们对品质的坚持从未改变，这是非常难得的初心。"
+                        </p>
+                    </div>
+                    
+                    <!-- 评价2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover-lift">
+                        <div class="flex items-center mb-4">
+                            <img src="https://picsum.photos/id/1011/100/100" alt="客户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h4 class="font-semibold">李女士</h4>
+                                <p class="text-gray-500 text-sm">某餐饮连锁品牌负责人</p>
+                            </div>
+                        </div>
+                        <div class="text-yellow-400 mb-4">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                        </div>
+                        <p class="text-gray-600 italic">
+                            "我们看重的是长期稳定的合作关系，景盛鲜仓用实际行动证明了他们对'客户至上'理念的坚守。遇到问题时，他们总是第一时间响应解决。"
+                        </p>
+                    </div>
+                    
+                    <!-- 评价3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover-lift">
+                        <div class="flex items-center mb-4">
+                            <img src="https://picsum.photos/id/1012/100/100" alt="客户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h4 class="font-semibold">王先生</h4>
+                                <p class="text-gray-500 text-sm">某电商平台采购总监</p>
+                            </div>
+                        </div>
+                        <div class="text-yellow-400 mb-4">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 italic">
+                            "市场环境不断变化，但景盛鲜仓始终保持着创业时的初心和热情。他们的诚信经营和专业服务让我们的合作非常放心，是值得信赖的伙伴。"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 数据统计 -->
+        <section class="py-16 bg-primary text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold mb-6">初心驱动的成长</h2>
+                        <p class="mb-8 opacity-90">
+                            多年来，我们始终坚守初心，以客户需求为导向，业务持续稳定增长。这份成长，源于客户的信任与支持，更源于我们对初心的坚持。
+                        </p>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>客户满意度</span>
+                                    <span>98%</span>
+                                </div>
+                                <div class="w-full bg-white/20 rounded-full h-2">
+                                    <div class="bg-white h-2 rounded-full" style="width: 98%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>准时配送率</span>
+                                    <span>96%</span>
+                                </div>
+                                <div class="w-full bg-white/20 rounded-full h-2">
+                                    <div class="bg-white h-2 rounded-full" style="width: 96%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>服务完成率</span>
+                                    <span>99%</span>
+                                </div>
+                                <div class="w-full bg-white/20 rounded-full h-2">
+                                    <div class="bg-white h-2 rounded-full" style="width: 99%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+                        <canvas id="businessChart" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系我们 -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-dark mb-4">与我们携手同行</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto">我们始终怀着初心，期待与您建立真诚的合作关系。如有任何疑问，欢迎随时联系我们。</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <form class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">姓名</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-custom" placeholder="请输入您的姓名">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">邮箱</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-custom" placeholder="请输入您的邮箱">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">电话</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-custom" placeholder="请输入您的电话">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-700 font-medium mb-2">留言</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-custom" placeholder="请输入您的留言内容"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition-custom">
+                                提交留言
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div>
+                        <div class="bg-gray-50 p-8 rounded-lg mb-8">
+                            <h3 class="text-xl font-semibold mb-6">联系方式</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 flex-shrink-0">
+                                        <i class="fa fa-map-marker"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium mb-1">公司地址</h4>
+                                        <p class="text-gray-600">青海省西宁市城东区XX路XX号景盛鲜仓大厦</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 flex-shrink-0">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium mb-1">联系电话</h4>
+                                        <p class="text-gray-600">0971-1234567</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 flex-shrink-0">
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium mb-1">电子邮箱</h4>
+                                        <p class="text-gray-600">info@qhjingsheng.com</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 flex-shrink-0">
+                                        <i class="fa fa-clock-o"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium mb-1">工作时间</h4>
+                                        <p class="text-gray-600">周一至周五: 9:00 - 18:00</p>
+                                        <p class="text-gray-600">周六至周日: 10:00 - 16:00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4">关注我们</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-custom">
+                                    <i class="fa fa-weixin"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-custom">
+                                    <i class="fa fa-weibo"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-custom">
+                                    <i class="fa fa-qq"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-custom">
+                                    <i class="fa fa-youtube-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 订阅区域 -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">与我们一起坚守初心</h2>
+                    <p class="text-gray-600 mb-8">
+                        订阅我们的电子邮件，了解我们如何在实践中坚守初心，以及最新的服务信息和行业洞察。
+                    </p>
+                    <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                        <input type="email" placeholder="请输入您的邮箱地址" class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-custom">
+                        <button type="submit" class="bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition-custom whitespace-nowrap">
+                            立即订阅
+                        </button>
+                    </form>
+                    <p class="text-gray-500 text-sm mt-4">
+                        我们尊重您的隐私，不会向第三方分享您的信息。
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-primary mr-3">
+                            <i class="fa fa-cube text-xl"></i>
+                        </div>
+                        <span class="text-xl font-bold">青海景盛鲜仓商贸</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        坚守初心，砥砺前行。我们致力于提供高品质的商贸服务，连接青海与全国各地的优质资源，为客户创造最大价值。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-custom">
+                            <i class="fa fa-weixin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-custom">
+                            <i class="fa fa-weibo text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-custom">
+                            <i class="fa fa-qq text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-custom">
+                            <i class="fa fa-youtube-play text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">快速链接</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-custom">首页</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-custom">关于我们</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-custom">服务项目</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-custom">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">服务项目</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">产品采购</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">仓储管理</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">物流配送</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">市场分析</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">供应链管理</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">联系我们</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-gray-400 mt-1 mr-3"></i>
+                            <span class="text-gray-400">青海省西宁市城东区XX路XX号景盛鲜仓大厦</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-phone text-gray-400 mr-3"></i>
+                            <span class="text-gray-400">0971-1234567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope text-gray-400 mr-3"></i>
+                            <span class="text-gray-400">info@qhjingsheng.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                        © 2023 青海景盛鲜仓商贸有限公司 版权所有 | 青ICP备XXXXXXXX号
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-custom">隐私政策</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-custom">服务条款</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-custom">网站地图</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 invisible">
+        <i class="fa fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'shadow-md');
+                navbar.classList.remove('py-4', 'shadow-sm');
+            } else {
+                navbar.classList.add('py-4', 'shadow-sm');
+                navbar.classList.remove('py-2', 'shadow-md');
+            }
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // 关闭移动菜单（如果打开）
+                    mobileMenu.classList.add('hidden');
+                    
+                    // 滚动到目标位置
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 返回顶部按钮
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 业务增长图表
+        const ctx = document.getElementById('businessChart').getContext('2d');
+        const businessChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['2018', '2019', '2020', '2021', '2022', '2023'],
+                datasets: [
+                    {
+                        label: '业务规模(万元)',
+                        data: [500, 750, 900, 1200, 1500, 1800],
+                        borderColor: '#ffffff',
+                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    },
+                    {
+                        label: '客户数量(个)',
+                        data: [300, 450, 600, 800, 1200, 1500],
+                        borderColor: '#36BFFA',
+                        backgroundColor: 'rgba(54, 191, 250, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'white'
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: 'white'
+                        }
+                    },
+                    y: {
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: 'white'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body></html>
